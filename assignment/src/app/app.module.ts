@@ -12,6 +12,8 @@ import { AboutComponent } from './page/about/about.component';
 import { ProductDetaitComponent } from './page/product-detait/product-detait.component';
 import { ProductAddComponent } from './page/product-add/product-add.component';
 import { ProductUpdateComponent } from './page/product-update/product-update.component';
+import { DashboardComponent } from './page/dashboard/dashboard.component';
+import { ProductPageComponent } from './page/product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { ProductUpdateComponent } from './page/product-update/product-update.com
     ProductDetaitComponent,
     ProductAddComponent,
     ProductUpdateComponent,
+    DashboardComponent,
+    ProductPageComponent,
   ],
   imports: [
     BrowserModule,
