@@ -4,25 +4,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { ProductPageComponent } from './pages/product-page/product-page.component';
-import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
-import { ProductAddComponent } from './pages/product-add/product-add.component';
-import { ProductUpdateComponent } from './pages/product-update/product-update.component';
+import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { AddProductComponent } from './pages/admin/add-product/add-product.component';
+import { UpdateProductComponent } from './pages/admin/update-product/update-product.component';
+import { HomePageComponent } from './pages/client/home-page/home-page.component';
+import { ProductPageComponent } from './pages/client/product-page/product-page.component';
+import { ProductDetailComponent } from './pages/client/product-detail/product-detail.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    BaseLayoutComponent,
+    ClientLayoutComponent,
     DashboardComponent,
+    AddProductComponent,
+    UpdateProductComponent,
     HomePageComponent,
     ProductPageComponent,
     ProductDetailComponent,
-    ProductAddComponent,
-    ProductUpdateComponent,
+    AddCategoryComponent,
+    UpdateCategoryComponent
   ],
   imports: [
     BrowserModule,

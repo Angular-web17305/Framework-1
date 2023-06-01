@@ -1,19 +1,50 @@
 {
-  "posts": [
+  "product": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "product 1",
+      "price": "100",
+      "desc": "..........",
+      "image": "https://picsum.photos/200",
+      "category": 1
+    },
+    {
+      "id": 2,
+      "name": "product 2",
+      "price": "200",
+      "desc": "..........",
+      "image": "https://picsum.photos/200",
+      "category": 1
+    },
+    {
+      "id": 3,
+      "name": "product 3",
+      "price": "300",
+      "desc": "..........",
+      "image": "https://picsum.photos/200",
+      "category": 1
+    },
+    {
+      "id": 4,
+      "name": "product 4",
+      "price": "400",
+      "desc": "..........",
+      "image": "https://picsum.photos/200",
+      "category": 1
+    },
+    {
+      "id": 5,
+      "name": "product 5",
+      "price": "500",
+      "desc": "..........",
+      "image": "https://picsum.photos/200",
+      "category": 1
     }
   ],
-  "comments": [
+  "category": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "rau củ sạch"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
