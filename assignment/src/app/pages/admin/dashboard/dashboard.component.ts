@@ -12,4 +12,13 @@ export class DashboardComponent {
   constructor(private productService: ProductService) {
     productService.getProducts().subscribe(data => this.products = data)
   }
+
+  removeProduct(id: number) {
+    const result = window.confirm("Xóa ản phẩm!")
+    if (result) {
+      this.productService.deleteProduct(id).subscribe(() => {
+        this.productService.getProducts().subscribe(data => this.products = data)
+      })
+    }
+  }
 }

@@ -23,14 +23,6 @@
       "desc": "..........",
       "image": "https://picsum.photos/200",
       "categoryId": 1
-    },
-    {
-      "name": "product 4",
-      "price": 400,
-      "desc": "....",
-      "image": "https://picsum.photos/200",
-      "categoryId": "1",
-      "id": 4
     }
   ],
   "category": [
