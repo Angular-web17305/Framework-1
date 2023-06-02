@@ -1,5 +1,5 @@
 export interface IProduct {
-    id: number,
+    id?: number,
     name: string,
     price: number,
     desc: string,
@@ -8,6 +8,6 @@ export interface IProduct {
 }
 
 export interface ICategory {
-    id: number,
+    id?: number,
     name: string,
 }
