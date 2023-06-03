@@ -14,7 +14,7 @@ export class DashboardComponent {
   }
 
   removeProduct(id: number) {
-    const result = window.confirm("Xóa ản phẩm!")
+    const result = window.confirm("Bạn muốn xóa sản phẩm!")
     if (result) {
       this.productService.deleteProduct(id).subscribe(() => {
         this.productService.getProducts().subscribe(data => this.products = data)
