@@ -10,13 +10,14 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
     path: '', component: ClientLayoutComponent, children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomePageComponent },
-      { path: 'product', component: ProductPageComponent },
+      { path: 'product-page', component: ProductPageComponent },
       { path: 'product/:id', component: ProductDetailComponent },
     ]
   },
@@ -30,6 +31,9 @@ const routes: Routes = [
       { path: 'category/add', component: AddCategoryComponent },
       { path: 'category/update/:id', component: UpdateCategoryComponent },
     ]
+  },
+  {
+    path: '**', component: PageNotFoundComponent
   }
 ];
 

@@ -1,0 +1,22 @@
+h2 {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+h2 {
+    color: #1c1c1c;
+    font-weight: 700;
+    position: relative;
+}
+
+h2:after {
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    right: 0;
+    height: 4px;
+    width: 80px;
+    background: #7fad39;
+    content: "";
+    margin: 0 auto;
+}
