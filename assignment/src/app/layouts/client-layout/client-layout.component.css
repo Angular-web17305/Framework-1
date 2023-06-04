@@ -1,3 +1,10 @@
+header {
+    background: #F3F6FA;
+    margin-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 a {
     font-size: 14px;
     font-weight: 700
@@ -17,6 +24,7 @@ a {
         text-align: center
     }
 }
+
 @import '~font-awesome/css/font-awesome.css';
 
 body {

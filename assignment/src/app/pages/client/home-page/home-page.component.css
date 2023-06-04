@@ -318,7 +318,7 @@ ol {
     float: right;
 }
 
-.hero__search__phone__icon {
+.hero__search__phone__icon a i {
     font-size: 18px;
     color: #7fad39;
     height: 50px;
@@ -476,6 +476,7 @@ ol {
     position: relative;
     overflow: hidden;
     background-position: center center;
+
 }
 
 .featured__item__pic__hover {
@@ -616,6 +617,7 @@ ol {
 .latest-product__item__pic img {
     height: 110px;
     width: 110px;
+    border: 1px solid #7fad39;
 }
 
 .latest-product__item__text {
@@ -846,4 +848,12 @@ ol {
 
 .footer__copyright__payment {
     float: right;
+}
+
+/*  khung */
+.featured__item__pic {
+    position: relative;
+    width: 230px;
+    height: 282px;
+    border: 1px solid #7fad39;
 }
