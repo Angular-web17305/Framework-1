@@ -1,0 +1,29 @@
+
+.text-center{
+  color: #11ab11;
+}
+.small-form {
+  max-width: 600px; /* Điều chỉnh kích thước form theo mong muốn */
+  margin: 0 auto;
+  background-color: #dbeee0;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 160px;
+  color: #363836;
+}
+
+.custom-btn-primary {
+  background-color: #094c09;
+  border-color: #6dbb63;
+  color: #fdfdfd;
+}
+.banner-container {
+  background-image: url(../img/thuviendohoa.vn_64.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8; 
+  height: 80vh;
+
+}
+

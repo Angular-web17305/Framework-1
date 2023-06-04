@@ -11,11 +11,17 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { SignupComponent } from './pages/users/signup/signup.component';
+import { SigninComponent } from './pages/users/signin/signin.component';
+import { LogoutComponent } from './pages/users/logout/logout.component';
 
 const routes: Routes = [
   {
     path: '', component: ClientLayoutComponent, children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
+      {path:'signup', component: SignupComponent},
+      {path:'signin', component: SigninComponent},
+      { path: 'logout', component: LogoutComponent},
       { path: 'home', component: HomePageComponent },
       { path: 'product-page', component: ProductPageComponent },
       { path: 'product/:id', component: ProductDetailComponent },
