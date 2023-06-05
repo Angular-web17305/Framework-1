@@ -1,0 +1,59 @@
+
+<div class="banner-container">
+    <form [formGroup]="formSignup" (ngSubmit)="onHandleSubmit()" class="small-form shadow-lg">
+     <div class="text-center">
+         <h1>ไร้สมรรถภาพ</h1>
+        
+     </div>
+      <div class="mb-3">
+           <label for="name" class="form-label">Tên</label>
+   <input id="name" type="text" formControlName="name" placeholder="Tên" class="form-control" />
+</div>
+<div *ngIf="formSignup.get('name')?.hasError('required') && submitted" class="text-danger">
+   Name is Required
+</div>
+<div class="mb-3">
+   <label for="email" class="form-label">Email</label>
+   <input id="email" type="email" formControlName="email" placeholder="Email" class="form-control" />
+</div>
+<div *ngIf="formSignup.get('email')?.hasError('required') && submitted" class="text-danger">
+   Email is Required
+</div>
+<div *ngIf="formSignup.get('email')?.hasError('email') && submitted" class="text-danger">
+   Email invalid
+</div>
+<div class="mb-3">
+   <label for="password" class="form-label">Mật khẩu</label>
+   <input
+       id="password"
+       type="password"
+       formControlName="password"
+       placeholder="Password"
+       class="form-control"
+   />
+</div>
+<div *ngIf="formSignup.get('password')?.hasError('required') && submitted" class="text-danger">
+   Mật khẩu là bắt buộc
+</div>
+<div *ngIf="formSignup.get('password')?.hasError('minlength') && submitted" class="text-danger">
+   Mật khẩu phải trên 6 ký tự
+</div>
+<div class="mb-3">
+   <label for="confirmPassword" class="form-label">Nhập lại mật khẩu</label>
+   <input
+       id="confirmPassword"
+       type="password"
+       formControlName="confirmPassword"
+       placeholder="Confirm Password"
+       class="form-control"
+   />
+</div>
+<div *ngIf="formSignup.hasError('notMatch') && submitted" class="text-danger">
+   Mật khẩu không khớp
+</div>
+<div class="text-center">
+   <button class="btn custom-btn-primary btn-lg btn-block">Đăng Ký</button>
+ </div>
+
+</form>
+</div>
