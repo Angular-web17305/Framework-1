@@ -16,6 +16,7 @@ import { HomePageComponent } from './pages/client/home-page/home-page.component'
 import { ProductPageComponent } from './pages/client/product-page/product-page.component';
 import { ProductDetailComponent } from './pages/client/product-detail/product-detail.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ShopingCartComponent } from './pages/client/shoping-cart/shoping-cart.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     ProductPageComponent,
     ProductDetailComponent,
     PageNotFoundComponent,
+    ShopingCartComponent,
   ],
   imports: [
     BrowserModule,
