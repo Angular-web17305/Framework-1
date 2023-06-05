@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,13 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { ProductManagementComponent } from './pages/admin/product-management/product-management.component';
 import { CategoryManagementComponent } from './pages/admin/category-management/category-management.component';
 
+import { ShopingCartComponent } from './pages/client/shoping-cart/shoping-cart.component';
+
+import { SigninComponent } from './pages/users/signin/signin.component';
+import { SignupComponent } from './pages/users/signup/signup.component';
+import { LogoutComponent } from './pages/users/logout/logout.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +42,10 @@ import { CategoryManagementComponent } from './pages/admin/category-management/c
     PageNotFoundComponent,
     ProductManagementComponent,
     CategoryManagementComponent,
+    ShopingCartComponent,
+    SigninComponent,
+    SignupComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
