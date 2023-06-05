@@ -1,6 +1,9 @@
-<!-- <p>update-product works!</p>
-<h2 class="mb-5 text-primary">Add product</h2>
+<h2 class="mb-5 text-primary">Update product</h2>
 <form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
+    <div class="mb-3 d-none">
+        <label class="form-label">ID</label>
+        <input type="text" class="form-control" formControlName="name">
+    </div>
     <div class="mb-3">
         <label class="form-label">Product Name</label>
         <input type="text" class="form-control" formControlName="name">
@@ -23,5 +26,6 @@
         <option value="2">Two</option>
         <option value="3">Three</option>
     </select>
+    <br>
     <button type="submit" class="btn btn-primary">Submit</button>
-</form> -->
+</form>
