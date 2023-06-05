@@ -16,6 +16,8 @@ import { HomePageComponent } from './pages/client/home-page/home-page.component'
 import { ProductPageComponent } from './pages/client/product-page/product-page.component';
 import { ProductDetailComponent } from './pages/client/product-detail/product-detail.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ProductManagementComponent } from './pages/admin/product-management/product-management.component';
+import { CategoryManagementComponent } from './pages/admin/category-management/category-management.component';
 
 import { ShopingCartComponent } from './pages/client/shoping-cart/shoping-cart.component';
 
@@ -38,9 +40,9 @@ import { LogoutComponent } from './pages/users/logout/logout.component';
     ProductPageComponent,
     ProductDetailComponent,
     PageNotFoundComponent,
-
+    ProductManagementComponent,
+    CategoryManagementComponent,
     ShopingCartComponent,
-
     SigninComponent,
     SignupComponent,
     LogoutComponent,
