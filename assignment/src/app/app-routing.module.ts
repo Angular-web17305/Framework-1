@@ -14,14 +14,16 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { SignupComponent } from './pages/users/signup/signup.component';
 import { SigninComponent } from './pages/users/signin/signin.component';
 import { LogoutComponent } from './pages/users/logout/logout.component';
+import { ProductManagementComponent } from './pages/admin/product-management/product-management.component';
+import { CategoryManagementComponent } from './pages/admin/category-management/category-management.component';
 
 const routes: Routes = [
   {
     path: '', component: ClientLayoutComponent, children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      {path:'signup', component: SignupComponent},
-      {path:'signin', component: SigninComponent},
-      { path: 'logout', component: LogoutComponent},
+      { path: 'signup', component: SignupComponent },
+      { path: 'signin', component: SigninComponent },
+      { path: 'logout', component: LogoutComponent },
       { path: 'home', component: HomePageComponent },
       { path: 'product-page', component: ProductPageComponent },
       { path: 'product/:id', component: ProductDetailComponent },
@@ -32,10 +34,10 @@ const routes: Routes = [
     path: 'admin', component: AdminLayoutComponent, children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'product-management', component: AddProductComponent },
+      { path: 'product-management', component: ProductManagementComponent },
       { path: 'product/add', component: AddProductComponent },
       { path: 'product/update/:id', component: UpdateProductComponent },
-      { path: 'product-management', component: AddProductComponent },
+      { path: 'category-management', component: CategoryManagementComponent },
       { path: 'category/add', component: AddCategoryComponent },
       { path: 'category/update/:id', component: UpdateCategoryComponent },
     ]

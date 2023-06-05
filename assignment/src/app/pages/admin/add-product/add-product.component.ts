@@ -38,7 +38,7 @@ export class AddProductComponent {
 
     this.productService.addProduct(product).subscribe((product) => {
       const result = alert("Thêm sản phẩm thành công")
-      this.router.navigateByUrl('/admin')
+      this.router.navigateByUrl('/admin/product-management')
     })
   }
 }
