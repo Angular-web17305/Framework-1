@@ -18,9 +18,7 @@ import { ProductDetailComponent } from './pages/client/product-detail/product-de
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ProductManagementComponent } from './pages/admin/product-management/product-management.component';
 import { CategoryManagementComponent } from './pages/admin/category-management/category-management.component';
-
 import { ShopingCartComponent } from './pages/client/shoping-cart/shoping-cart.component';
-
 import { SigninComponent } from './pages/users/signin/signin.component';
 import { SignupComponent } from './pages/users/signup/signup.component';
 import { LogoutComponent } from './pages/users/logout/logout.component';
@@ -46,7 +44,7 @@ import { LogoutComponent } from './pages/users/logout/logout.component';
     SigninComponent,
     SignupComponent,
     LogoutComponent,
-  ],
+     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
