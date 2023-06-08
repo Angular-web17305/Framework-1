@@ -7,6 +7,9 @@ import { LocalStorageService } from 'ngx-webstorage';
   providedIn: 'root'
 })
 export class AuthService {
+  logout() {
+    throw new Error('Method not implemented.');
+  }
   API_URL: string = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient, private localStorage: LocalStorageService) {

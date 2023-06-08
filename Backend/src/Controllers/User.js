@@ -25,7 +25,7 @@ export const SignUp = async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      role: "",
+      role: "member",
     });
     user.password = undefined;
     return res.json({
@@ -36,10 +36,10 @@ export const SignUp = async (req, res) => {
     return res.status(401).json({
       message: error.message,
     });
-   
+
   }
 
-  
+
 };
 
 export const Signin = async (req, res) => {
@@ -66,7 +66,7 @@ export const Signin = async (req, res) => {
     const token = jwt.sign({ _id: user.id }, "1234", { expiresIn: "1h" });
     user.password = undefined;
     // localStorage.setItem("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdmMTZkZjZlN2I3ZWQ4NGZjNWI4ODciLCJpYXQiOjE2ODYwNTEyMTMsImV4cCI6MTY4NjA1NDgxM30.yDuIeGtkDvuAtrXXHOMUvH9uQ60LP_H0R6J9ZLYmRLQ", token);
-       return res.json({
+    return res.json({
       message: "Đăng nhập thành công",
       accessToken: token,
       user,
@@ -75,7 +75,7 @@ export const Signin = async (req, res) => {
     return res.status(400).json({
       massage: error.message,
     });
-    
+
   }
 
 };
