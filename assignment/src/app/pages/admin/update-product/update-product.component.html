@@ -20,11 +20,8 @@
         <label class="form-label">Image</label>
         <input type="text" class="form-control" formControlName="image">
     </div>
-    <select class="form-select mb-3" formControlName="categoryId">
-        <option selected>--Category--</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+    <select class="form-select form-select-lg mb-3" formControlName="categoryId">
+        <option *ngFor="let cate of categoryes" value="{{cate._id}}">{{cate.name}}</option>
     </select>
     <br>
     <button type="submit" class="btn btn-primary">Submit</button>

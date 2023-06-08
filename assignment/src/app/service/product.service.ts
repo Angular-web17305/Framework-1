@@ -11,18 +11,18 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>('http://localhost:3000/products')
+    return this.http.get<IProduct[]>('http://localhost:3000/api/products')
   }
-  deleteProduct(id: number): Observable<IProduct> {
-    return this.http.delete<IProduct>(`http://localhost:3000/products/${id}`)
+  deleteProduct(id: number | string): Observable<IProduct> {
+    return this.http.delete<IProduct>(`http://localhost:3000/api/products/${id}`)
   }
-  getProduct(id: number): Observable<IProduct> {
-    return this.http.get<IProduct>(`http://localhost:3000/products/${id}`)
+  getProduct(id: string): Observable<IProduct> {
+    return this.http.get<IProduct>(`http://localhost:3000/api/products/${id}`)
   }
   addProduct(product: IProduct): Observable<IProduct> {
-    return this.http.post<IProduct>(`http://localhost:3000/products`, product)
+    return this.http.post<IProduct>(`http://localhost:3000/api/products`, product)
   }
   updateProduct(product: IProduct): Observable<IProduct> {
-    return this.http.patch<IProduct>(`http://localhost:3000/products/${product.id}`, product)
+    return this.http.patch<IProduct>(`http://localhost:3000/api/products/${product._id}`, product)
   }
 }
