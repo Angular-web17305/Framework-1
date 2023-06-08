@@ -1,1 +1,22 @@
-<p>category-management works!</p>
+<a routerLink="/admin/product/add"><button class="mb-4 btn btn-primary">Add new product</button></a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let category of categorys; index as i">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{category.name}}</td>
+            <td>
+                <a routerLink="/admin/category/update/{{category._id}}">
+                    <button class="btn btn-primary">Update</button>
+                </a>
+                <button class="mx-3 btn btn-danger" (click)="removeCate(category._id!)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
