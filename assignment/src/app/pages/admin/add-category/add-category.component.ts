@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms'
-import { IProduct } from 'src/app/interface/product';
 import { ProductService } from 'src/app/service/product.service';
 import { Router } from '@angular/router';
 import { ICategory } from 'src/app/interface/categoryes';
