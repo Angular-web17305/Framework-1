@@ -24,15 +24,12 @@ const routes: Routes = [
   {
     path: '', component: ClientLayoutComponent, children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'signup', component: SignupComponent },
-      { path: 'signin', component: SigninComponent },
-      { path: 'product', component: ProductManagementComponent },
-      { path: 'home', component: HomePageComponent },
-      { path: 'product-page', component: ProductPageComponent },
-      { path: 'logout', component: LogoutComponent },
       { path: 'home', component: HomePageComponent },
       { path: 'product', component: ProductPageComponent },
       { path: 'product/:id', component: ProductDetailComponent },
+      { path: 'signup', component: SignupComponent },
+      { path: 'signin', component: SigninComponent },
+      { path: 'logout', component: LogoutComponent },
     ]
   },
 
