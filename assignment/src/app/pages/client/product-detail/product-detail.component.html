@@ -1,1 +1,17 @@
-<p>product-detail works!</p>
+<h2 class="all__product">Product Detail</h2>
+<div class="container">
+    <div class="product-detail">
+        <div class="banner-left">
+            <h2 class="name">{{product.name}}</h2>
+            <p id="money">${{product.price}}</p>
+            <p id="Pellentesque">{{product.desc}}</p>
+            <input type="text" placeholder="Quantity">
+            <a href="/home">
+                <button>Add To Cart</button>
+            </a>
+        </div>
+        <div class="img">
+            <img src="{{product.image}}" alt="">
+        </div>
+    </div>
+</div>
