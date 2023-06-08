@@ -26,16 +26,16 @@ const routes: Routes = [
       { path: 'signup', component: SignupComponent },
       { path: 'signin', component: SigninComponent },
       { path: 'logout', component: LogoutComponent },
-              { path: 'home', component: HomePageComponent },
-      { path: 'product-page', component: ProductPageComponent },
+      { path: 'home', component: HomePageComponent },
+      { path: 'product', component: ProductPageComponent },
       { path: 'product/:id', component: ProductDetailComponent },
     ]
   },
 
   {
-    
-      path: 'admin', component: AdminLayoutComponent, children: [
-          { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+
+    path: 'admin', component: AdminLayoutComponent, children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'product-management', component: ProductManagementComponent },
       { path: 'product/add', component: AddProductComponent },

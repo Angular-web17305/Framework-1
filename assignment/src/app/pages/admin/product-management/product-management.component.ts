@@ -13,7 +13,7 @@ export class ProductManagementComponent {
     productService.getProducts().subscribe(data => this.products = data)
   }
 
-  removeProduct(id: number) {
+  removeProduct(id: number | string) {
     const result = window.confirm("Bạn muốn xóa sản phẩm!")
     if (result) {
       this.productService.deleteProduct(id).subscribe(() => {

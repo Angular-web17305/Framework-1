@@ -20,10 +20,10 @@
             <td><img width="70px" src={{product.image}} alt=""></td>
             <td>{{product.categoryId}}</td>
             <td>
-                <a routerLink="/admin/product/update/{{product.id!}}">
+                <a routerLink="/admin/product/update/{{product._id}}">
                     <button class="btn btn-primary">Update</button>
                 </a>
-                <button class="mx-3 btn btn-danger" (click)="removeProduct(product.id!)">Delete</button>
+                <button class="mx-3 btn btn-danger" (click)="removeProduct(product._id!)">Delete</button>
             </td>
         </tr>
     </tbody>

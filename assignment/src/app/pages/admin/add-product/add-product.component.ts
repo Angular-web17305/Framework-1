@@ -3,6 +3,8 @@ import { FormBuilder } from '@angular/forms'
 import { IProduct } from 'src/app/interface/product';
 import { ProductService } from 'src/app/service/product.service';
 import { Router } from '@angular/router';
+import { ICategory } from 'src/app/interface/categoryes';
+import { CategoryesService } from 'src/app/service/categoryes.service';
 
 @Component({
   selector: 'app-add-product',
@@ -10,6 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent {
+  categoryes!: ICategory[]
+
   productForm = this.formBuilder.group(
     {
       name: [''],
@@ -22,9 +26,12 @@ export class AddProductComponent {
 
   constructor(
     private productService: ProductService,
+    private categoryService: CategoryesService,
     private formBuilder: FormBuilder,
     private router: Router
-  ) { }
+  ) {
+    this.categoryService.getCategorys().subscribe(data => this.categoryes = data)
+  }
 
 
   onHandleSubmit() {
@@ -33,11 +40,11 @@ export class AddProductComponent {
       price: this.productForm.value.price || 0,
       desc: this.productForm.value.desc || "",
       image: this.productForm.value.image || "",
-      categoryId: this.productForm.value.categoryId || 0,
+      categoryId: this.productForm.value.categoryId || 0 || "",
     }
 
-    this.productService.addProduct(product).subscribe((product) => {
-      const result = alert("Thêm sản phẩm thành công")
+    this.productService.addProduct(product).subscribe(() => {
+      alert("Thêm sản phẩm thành công")
       this.router.navigateByUrl('/admin/product-management')
     })
   }
