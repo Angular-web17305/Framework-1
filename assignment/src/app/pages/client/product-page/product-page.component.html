@@ -1,53 +1,24 @@
-<div class="row">
-    <div class="col-lg-12">
-        <div class="hero__search">
-            <div class="hero__search__form mr-5">
-                <form action="#">
-                    <div class="hero__search__categories">
-                        All Categories
-                        <span class="arrow_carrot-down"></span>
-                    </div>
-                    <input type="text" placeholder="What do yo u need?">
-                    <button type="submit" class="site-btn">SEARCH</button>
-                </form>
-            </div>
-            <div class="hero__search__phone">
-                <div class="hero__search__phone__icon">
-                    <a href=""><i class="bi bi-person-circle"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <h2 class="all__product">All Product</h2>
 <div class="container">
     <div class="content">
         <div class="sidebar">
             <div class="sidebar__item">
-                <h4>Department</h4>
+                <h4>All Categories</h4>
                 <ul>
-                    <li><a href="#">Fresh Meat</a></li>
-                    <li><a href="#">Vegetables</a></li>
-                    <li><a href="#">Fruit & Nut Gifts</a></li>
-                    <li><a href="#">Fresh Berries</a></li>
-                    <li><a href="#">Ocean Foods</a></li>
-                    <li><a href="#">Butter & Eggs</a></li>
+                    <li *ngFor="let cate of categoryes"><a href="/product">{{cate.name}}</a></li>
                 </ul>
             </div>
         </div>
         <div class="product">
             <div class="content-item" *ngFor="let product of products">
-                <a routerLink="/{{product._id}}">
+                <a routerLink="{{product._id}}">
                     <div class="product__img">
                         <img src="{{product.image}}" alt="">
-                        <div class="product__icon">
-                            <div class="product__icon__item">
-                                <i class="bi bi-heart-fill"></i>
+                        <a routerLink="/home">
+                            <div class="product__order">
+                                add to cart
                             </div>
-                            <div class="product__icon__item">
-                                <i class="bi bi-cart-plus-fill"></i>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="product__text">
                         <h2>{{product.name}}</h2>
