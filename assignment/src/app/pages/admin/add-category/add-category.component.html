@@ -1,1 +1,31 @@
 <p>add-category works!</p>
+<h2 class="mb-5">Add product</h2>
+<form>
+    <div class="mb-3">
+        <label class="form-label">Product Name</label>
+        <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input type="number" class="form-control" formControlName="price">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <input type="text" class="form-control" formControlName="desc">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Image</label>
+        <input type="text" class="form-control" formControlName="image">
+    </div>
+    <div>
+        <label class="form-label">Category</label>
+        <select class="form-control" formControlName="categoryId">
+            <option disabled>CATEGORYES</option>
+            <!-- <option *ngFor="let cate of categoryes" [ngValue]="cate._id">{{cate.name}}</option> -->
+        </select>
+    </div>
+    <br>
+    <div class="btn-submit">
+        <button type="submit">Add Product</button>
+    </div>
+</form>

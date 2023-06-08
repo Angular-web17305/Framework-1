@@ -41,9 +41,10 @@ export class ProductManagementComponent {
       this.products = data;
     });
   }
-
   removeProduct(id: any) {
     const result = window.confirm("Bạn muốn xóa sản phẩm!");
+  removeProduct(id: number | string) {
+    const result = window.confirm("Bạn muốn xóa sản phẩm!")
     if (result) {
       this.productService.deleteProduct(id).subscribe(() => {
 

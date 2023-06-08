@@ -28,13 +28,17 @@ const routes: Routes = [
       { path: 'product', component: ProductManagementComponent },
       { path: 'home', component: HomePageComponent },
       { path: 'product-page', component: ProductPageComponent },
+      { path: 'logout', component: LogoutComponent },
+      { path: 'home', component: HomePageComponent },
+      { path: 'product', component: ProductPageComponent },
       { path: 'product/:id', component: ProductDetailComponent },
     ]
   },
 
   {
-
     path: 'admin', component: AdminLayoutComponent, canActivate: [AuthGuard], children: [
+    path: 'admin', component: AdminLayoutComponent, children: [
+
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'product-management', component: ProductManagementComponent },
