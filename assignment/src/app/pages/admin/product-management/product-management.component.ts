@@ -8,17 +8,19 @@ import { ProductService } from 'src/app/service/product.service';
   styleUrls: ['./product-management.component.css']
 })
 export class ProductManagementComponent {
-  products!: IProduct[]
-  constructor(private productService: ProductService) {
-    productService.getProducts().subscribe(data => this.products = data)
-  }
+  products: IProduct[] = [];
 
-  removeProduct(id: number | string) {
+  constructor(private productService: ProductService) {
+    console.log("access product page")
+    this.productService.getProducts().subscribe(data => {
+      this.products = data;
+    });
+  }
+  removeProduct(id: any) {
     const result = window.confirm("Bạn muốn xóa sản phẩm!")
     if (result) {
       this.productService.deleteProduct(id).subscribe(() => {
-        this.productService.getProducts().subscribe(data => this.products = data)
-      })
+      });
     }
   }
 }
