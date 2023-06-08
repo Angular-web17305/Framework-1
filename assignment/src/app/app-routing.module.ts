@@ -13,10 +13,10 @@ import { UpdateCategoryComponent } from './pages/admin/update-category/update-ca
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { SignupComponent } from './pages/users/signup/signup.component';
 import { SigninComponent } from './pages/users/signin/signin.component';
-import { LogoutComponent } from './pages/users/logout/logout.component';
+
 import { ProductManagementComponent } from './pages/admin/product-management/product-management.component';
 import { CategoryManagementComponent } from './pages/admin/category-management/category-management.component';
-
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
@@ -25,17 +25,17 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'signup', component: SignupComponent },
       { path: 'signin', component: SigninComponent },
-      { path: 'logout', component: LogoutComponent },
-              { path: 'home', component: HomePageComponent },
+      { path: 'product', component: ProductManagementComponent },
+      { path: 'home', component: HomePageComponent },
       { path: 'product-page', component: ProductPageComponent },
       { path: 'product/:id', component: ProductDetailComponent },
     ]
   },
 
   {
-    
-      path: 'admin', component: AdminLayoutComponent, children: [
-          { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+
+    path: 'admin', component: AdminLayoutComponent, canActivate: [AuthGuard], children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'product-management', component: ProductManagementComponent },
       { path: 'product/add', component: AddProductComponent },
