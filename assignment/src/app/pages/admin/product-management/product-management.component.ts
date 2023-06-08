@@ -11,7 +11,6 @@ export class ProductManagementComponent {
   products: IProduct[] = [];
 
   constructor(private productService: ProductService) {
-    console.log("access product page")
     this.productService.getProducts().subscribe(data => {
       this.products = data;
     });
@@ -20,6 +19,9 @@ export class ProductManagementComponent {
     const result = window.confirm("Bạn muốn xóa sản phẩm!")
     if (result) {
       this.productService.deleteProduct(id).subscribe(() => {
+        this.productService.getProducts().subscribe(data => {
+          this.products = data;
+        });
       });
     }
   }
