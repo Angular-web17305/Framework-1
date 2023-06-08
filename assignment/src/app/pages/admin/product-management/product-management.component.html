@@ -20,6 +20,7 @@
             <td><img width="70px" src={{product.image}} alt=""></td>
             <td>{{product.categoryId}}</td>
             <td>
+                <a routerLink="/admin/product/update/{{product._id!}}">
                 <a routerLink="/admin/product/update/{{product._id}}">
                     <button class="btn btn-primary">Update</button>
                 </a>

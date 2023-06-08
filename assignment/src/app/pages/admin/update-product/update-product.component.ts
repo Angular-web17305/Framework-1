@@ -43,6 +43,7 @@ export class UpdateProductComponent {
         this.product = data;
 
         this.productForm.patchValue({
+          id: Number(data._id),
           _id: data._id,
           name: data.name,
           price: data.price,
@@ -56,6 +57,7 @@ export class UpdateProductComponent {
 
   onHandleSubmit() {
     const product: IProduct = {
+      _id: this.productForm.value.id || 0,
       _id: this.productForm.value._id || 0 || "",
       name: this.productForm.value.name || "",
       price: this.productForm.value.price || 0,
