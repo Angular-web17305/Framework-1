@@ -1,1 +1,14 @@
-<p>update-category works!</p>
+
+<h2 class="mb-5 text-primary">Update Category</h2>
+<form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
+    <div class="mb-3 d-none">
+        <label class="form-label">ID</label>
+        <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Category Name</label>
+        <input type="text" class="form-control" formControlName="name">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
