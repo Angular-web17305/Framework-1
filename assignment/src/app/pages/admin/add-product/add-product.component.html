@@ -1,4 +1,4 @@
-<h2 class="mb-5">Add product</h2>
+<h2 class="mb-5 btn btn-primary">Add product</h2>
 <form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
     <div class="mb-3">
         <label class="form-label">Product Name</label>
@@ -16,7 +16,6 @@
         <label class="form-label">Image</label>
         <input type="file" id="productImg" class="form-control">
     </div>
-
     <div>
         <label class="form-label" for="categoryId">Category</label>
         <select class="form-control" id="categoryId">
@@ -27,6 +26,6 @@
 
     <br>
     <div class="btn-submit">
-        <button type="submit">Add Product</button>
+        <button type="submit" class="btn-primary">Add Product</button>
     </div>
 </form>
