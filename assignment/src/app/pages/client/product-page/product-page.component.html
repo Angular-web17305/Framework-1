@@ -1,37 +1,45 @@
 <h2 class="all__product">All Product</h2>
 <div class="container">
-    <div class="content">
-        <div class="sidebar">
-            <div class="sidebar__item">
-                <h4>All Categories</h4>
-                <ul>
-                    <li *ngFor="let cate of categoryes"><a href="/product">{{cate.name}}</a></li>
-                </ul>
-            </div>
+  <div class="content">
+    <div class="sidebar">
+      <div class="sidebar__item">
+        <!-- <h4>All Categories</h4>
+        <ul>
+          <li *ngFor="let cate of categoryes">
+            <a href="/product">{{ cate.name }}</a>
+          </li>
+        </ul> -->
+        <div class="cate">
+          <button (click)="currentProduct()">ALL</button>
+          <div *ngFor="let category of categoryes">
+            <button (click)="selectCate(category._id)">
+              {{ category.name }}
+            </button>
+          </div>
         </div>
-        <div class="product">
-            <div class="content-item" *ngFor="let product of products">
-                <a routerLink="{{product._id}}">
-                    <div class="product__img">
-                        <img src="{{product.image}}" alt="">
-                        <a routerLink="/home">
-                            <div class="product__order">
-                                add to cart
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product__text">
-                        <h2>{{product.name}}</h2>
-                        <div class="price">${{product.price}}</div>
-                    </div>
-                </a>
-            </div>
-        </div>
+      </div>
     </div>
-    <div class="product__pagination text-center">
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+    <div class="product">
+      <div class="content-item" *ngFor="let product of filteredProducts">
+        <a routerLink="{{ product._id }}">
+          <div class="product__img">
+            <img src="{{ product.image }}" alt="" />
+            <a routerLink="/home">
+              <div class="product__order">add to cart</div>
+            </a>
+          </div>
+          <div class="product__text">
+            <h2>{{ product.name }}</h2>
+            <div class="price">${{ product.price }}</div>
+          </div>
+        </a>
+      </div>
     </div>
+  </div>
+  <div class="product__pagination text-center">
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+  </div>
 </div>
