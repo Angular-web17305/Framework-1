@@ -14,17 +14,19 @@
     </div>
     <div class="mb-3">
         <label class="form-label">Image</label>
-        <input type="text" class="form-control" formControlName="image">
+        <input type="file" id="productImg" class="form-control">
     </div>
+
     <div>
-        <label class="form-label">Category</label>
-        <select class="form-control" formControlName="categoryId">
+        <label class="form-label" for="categoryId">Category</label>
+        <select class="form-control" id="categoryId">
             <option disabled>CATEGORYES</option>
             <option *ngFor="let cate of categoryes" [ngValue]="cate._id">{{cate.name}}</option>
         </select>
     </div>
+
     <br>
     <div class="btn-submit">
-        <button type="submit" class=" btn btn-primary">Add Product</button>
+        <button type="submit">Add Product</button>
     </div>
 </form>

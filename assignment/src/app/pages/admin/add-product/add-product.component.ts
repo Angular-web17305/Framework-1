@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms'
-import { IProduct } from 'src/app/interface/product';
+import { FormBuilder, Validators } from '@angular/forms'
 import { ProductService } from 'src/app/service/product.service';
 import { Router } from '@angular/router';
 import { ICategory } from 'src/app/interface/categoryes';
 import { CategoryesService } from 'src/app/service/categoryes.service';
+import { HttpClient } from '@angular/common/http';
+import axios from 'axios';
+
 
 @Component({
   selector: 'app-add-product',
@@ -12,39 +14,56 @@ import { CategoryesService } from 'src/app/service/categoryes.service';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent {
-  categoryes!: ICategory[]
-
-  productForm = this.formBuilder.group(
-    {
-      name: [''],
-      price: [0],
-      desc: [''],
-      image: [''],
-      categoryId: [0]
-    }
-  )
-
+  public imageUrl: any;
+  categoryes!: ICategory[];
   constructor(
     private productService: ProductService,
     private categoryService: CategoryesService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private http: HttpClient
   ) {
     this.categoryService.getCategorys().subscribe(data => this.categoryes = data)
   }
-
-
-  onHandleSubmit() {
-    const product: IProduct = {
-      name: this.productForm.value.name || "",
-      price: this.productForm.value.price || 0,
-      desc: this.productForm.value.desc || "",
-      image: this.productForm.value.image || "",
-      categoryId: this.productForm.value.categoryId || 0 || "",
+  productForm = this.formBuilder.group(
+    {
+      name: ['', [Validators.required]],
+      price: [0, [Validators.required]],
+      desc: ['', [Validators.required]],
     }
+  )
+  async onHandleSubmit() {
+    const productImg: any = document.getElementById('productImg');
+    const categoryId_id: any = document.getElementById('categoryId');
+    const cloud_name = "dwyycqczs";
+    const preset_name = "upimg_angular";
+    const folder_name = "ASM_2"
+    const formData = new FormData();
+    const file = productImg.files[0];
+    formData.append(`file`, file);
+    formData.append('upload_preset', preset_name);
+    formData.append('cloud_name', cloud_name);
+    formData.append('folder', folder_name);
+    const res = await axios
+      .post(`https://api.cloudinary.com/v1_1/${cloud_name}/upload`, formData)
+      .then(res => res.data);
+    this.imageUrl = await res.secure_url;
 
-    this.productService.addProduct(product).subscribe(() => {
-      alert("Thêm sản phẩm thành công")
+    // Find the selected category from the categoryes array
+    const selectedCategory = this.categoryes.find(category => category._id === categoryId_id.value);
+
+    const postData: any = {
+      name: this.productForm.value.name,
+      price: this.productForm.value.price,
+      desc: this.productForm.value.desc,
+      image: this.imageUrl,
+      categoryId: selectedCategory ? selectedCategory._id : null,
+    }
+    console.log("Aaâ");
+    console.log(postData);
+    this.productService.addProduct(postData).subscribe((data) => {
+      console.log(data);
+      alert("Them Thanh cong")
       this.router.navigateByUrl('/admin/product-management')
     })
   }
