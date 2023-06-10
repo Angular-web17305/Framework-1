@@ -30,11 +30,11 @@ export class AddProductComponent {
       name: ['', [Validators.required]],
       price: [0, [Validators.required]],
       desc: ['', [Validators.required]],
+      categoryId: ['', [Validators.required]],
     }
   )
   async onHandleSubmit() {
     const productImg: any = document.getElementById('productImg');
-    const categoryId_id: any = document.getElementById('categoryId');
     const cloud_name = "dwyycqczs";
     const preset_name = "upimg_angular";
     const folder_name = "ASM_2"
@@ -49,15 +49,12 @@ export class AddProductComponent {
       .then(res => res.data);
     this.imageUrl = await res.secure_url;
 
-    // Find the selected category from the categoryes array
-    const selectedCategory = this.categoryes.find(category => category._id === categoryId_id.value);
-
     const postData: any = {
       name: this.productForm.value.name,
       price: this.productForm.value.price,
       desc: this.productForm.value.desc,
       image: this.imageUrl,
-      categoryId: selectedCategory ? selectedCategory._id : null,
+      categoryId: this.productForm.value.categoryId,
     }
     this.productService.addProduct(postData).subscribe(() => {
       alert("Them Thanh cong")
