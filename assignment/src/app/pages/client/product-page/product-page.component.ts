@@ -26,9 +26,6 @@ export class ProductPageComponent implements OnInit {
     private categoryesService: CategoryesService,
     private http: HttpClient
   ) {
-    // this.productService.getProducts().subscribe((data) => {
-    //   this.products = data;
-    // });
     this.categoryesService.getCategorys().subscribe((data) => {
       this.categoryes = data;
     });
@@ -39,13 +36,11 @@ export class ProductPageComponent implements OnInit {
   getProduct(): void {
     this.productService.getProducts().subscribe((data) => {
       this.filteredProducts = data;
-      console.log(this.filteredProducts);
     });
   }
   currentProduct() {
     this.productService.getProducts().subscribe((data) => {
       this.filteredProducts = data;
-      console.log(this.filteredProducts);
     });
   }
   selectCate(id: any) {
@@ -53,7 +48,6 @@ export class ProductPageComponent implements OnInit {
     console.log(id);
     this.http.get(apiUrl).subscribe((res: any) => {
       this.filteredProducts = res.products;
-      console.log(this.filteredProducts);
     });
   }
 }

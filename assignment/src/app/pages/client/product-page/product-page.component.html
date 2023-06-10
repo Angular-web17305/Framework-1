@@ -3,20 +3,12 @@
   <div class="content">
     <div class="sidebar">
       <div class="sidebar__item">
-        <!-- <h4>All Categories</h4>
+        <h4 (click)="currentProduct()">All Categories</h4>
         <ul>
-          <li *ngFor="let cate of categoryes">
-            <a href="/product">{{ cate.name }}</a>
+          <li *ngFor="let cate of categoryes" (click)="selectCate(cate._id)">
+            {{ cate.name }}
           </li>
-        </ul> -->
-        <div class="cate">
-          <button (click)="currentProduct()">ALL</button>
-          <div *ngFor="let category of categoryes">
-            <button (click)="selectCate(category._id)">
-              {{ category.name }}
-            </button>
-          </div>
-        </div>
+        </ul>
       </div>
     </div>
     <div class="product">
