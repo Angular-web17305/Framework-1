@@ -25,4 +25,12 @@ export class ProductService {
   updateProduct(product: IProduct): Observable<IProduct> {
     return this.http.patch<IProduct>(`http://localhost:3000/api/products/${product._id}`, product)
   }
+  getlist(_limit:number =4, search_key:any=null):Observable<Array<IProduct>>{
+    let url='http://localhost:3000/api/products/?_limit='+_limit +'&_sort=id&_oder=desc'
+    if(search_key != null){
+      url +='&name_like='+search_key;
+    }
+    return this.http.get<Array<IProduct>>(url)
+  }
+  
 }
