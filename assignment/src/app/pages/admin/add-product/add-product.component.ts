@@ -59,10 +59,7 @@ export class AddProductComponent {
       image: this.imageUrl,
       categoryId: selectedCategory ? selectedCategory._id : null,
     }
-    console.log("Aaâ");
-    console.log(postData);
-    this.productService.addProduct(postData).subscribe((data) => {
-      console.log(data);
+    this.productService.addProduct(postData).subscribe(() => {
       alert("Them Thanh cong")
       this.router.navigateByUrl('/admin/product-management')
     })
