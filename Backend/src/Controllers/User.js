@@ -79,39 +79,22 @@ export const Signin = async (req, res) => {
   }
 
 };
-// export const SignUp = async (req, res) => {
-//   try {
-//     const { name, email, password, role } = req.body;
-//     const UserExists = await UserCheme.findOne({ email });
-//     if (UserExists) {
-//       return res.json({
-//         message: "Tài khoản đã tồn tại",
-//       });
-//     }
-//     const { error } = CheckvalidateSignUp.validate(req.body, {
-//       abortEarly: false,
-//     });
-//     if (error) {
-//       return res.json({
-//         message: error.details[0].message,
-//       });
-//     }
-//     const hashedPassword = await bcrypt.hash(password, 8);
-//     const user = await UserCheme.create({
-//       name,
-//       email,
-//       password: hashedPassword,
-//       role: role || "user", // Sử dụng giá trị role từ req.body, nếu không có, mặc định là "user"
-//     });
-//     user.password = undefined;
-//     return res.json({
-//       message: "Tạo tài khoản thành công",
-//       data: user,
-//     });
-//   } catch (error) {
-//     return res.status(401).json({
-//       message: error.message,
-//     });
-//   }
-// };
-
+export const getUsers = async (req, res) => {
+  try {
+    const users = await UserCheme.find();
+    res.json(users);
+  } catch (error) {
+    console.error('Đã xảy ra lỗi khi lấy danh sách người dùng.', error);
+    res.status(500).json({ error: 'Đã xảy ra lỗi khi lấy danh sách người dùng.' });
+  }
+};
+export const deleteUser = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    await UserCheme.findByIdAndRemove(userId);
+    res.sendStatus(204); // Xóa thành công
+  } catch (error) {
+    console.error('Đã xảy ra lỗi khi xóa người dùng', error);
+    res.status(500).json({ error: 'Đã xảy ra lỗi khi xóa người dùng' });
+  }
+};

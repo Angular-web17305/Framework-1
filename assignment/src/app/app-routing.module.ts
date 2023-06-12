@@ -18,6 +18,7 @@ import { ProductManagementComponent } from './pages/admin/product-management/pro
 import { CategoryManagementComponent } from './pages/admin/category-management/category-management.component';
 import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './pages/users/logout/logout.component';
+import { ListUserComponent } from './pages/users/list-user/list-user.component';
 
 
 const routes: Routes = [
@@ -43,6 +44,7 @@ const routes: Routes = [
       { path: 'category-management', component: CategoryManagementComponent },
       { path: 'category/add', component: AddCategoryComponent },
       { path: 'category/update/:id', component: UpdateCategoryComponent },
+      {path: 'users', component: ListUserComponent}
     ]
   },
   {

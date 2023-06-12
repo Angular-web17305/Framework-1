@@ -1,5 +1,17 @@
 .custom-btn-primary {
     background-color: #094c09;
     border-color: #6dbb63;
-    color: #fdfdfd;
+    color: #edf4ee;
+  }
+  .banner-container {
+    background-image: url(../img/thuviendohoa.vn_64.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8; 
+    height: 80vh;
+  
+  }
+  .text-center{
+    color: #2f7226;
   }
