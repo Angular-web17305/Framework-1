@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IProduct } from 'src/app/interface/product';
 import { ProductService } from 'src/app/service/product.service';
 
+
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -10,6 +11,7 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class ProductDetailComponent {
   product!: IProduct
+  quantity!: number
   constructor(
     private productService: ProductService,
     private params: ActivatedRoute
@@ -19,4 +21,10 @@ export class ProductDetailComponent {
       this.productService.getProduct(id).subscribe(data => this.product = data)
     })
   }
+  addToCart(product: IProduct) {
+    console.log(product);
+    console.log(this.quantity);
+
+  }
 }
+
