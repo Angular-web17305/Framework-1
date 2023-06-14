@@ -20,6 +20,7 @@ import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './pages/users/logout/logout.component';
 import { ListUserComponent } from './pages/users/list-user/list-user.component';
 import { ShopingCartComponent } from './pages/client/shoping-cart/shoping-cart.component';
+import { BuyItemComponent } from './pages/client/buy-item/buy-item.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'signup', component: SignupComponent },
       { path: 'signin', component: SigninComponent },
       { path: 'logout', component: LogoutComponent },
+      { path: 'oder', component: BuyItemComponent },
     ]
   },
 
