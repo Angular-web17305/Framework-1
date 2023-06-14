@@ -23,6 +23,7 @@ import { AuthInterceptor } from './auth.interceptor';
 import { SigninComponent } from './pages/users/signin/signin.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { ListUserComponent } from './pages/users/list-user/list-user.component';
+import { BuyItemComponent } from './pages/client/buy-item/buy-item.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { ListUserComponent } from './pages/users/list-user/list-user.component';
     SigninComponent,
     SignupComponent,
     ListUserComponent,
+    BuyItemComponent,
   ],
   imports: [
     BrowserModule,
