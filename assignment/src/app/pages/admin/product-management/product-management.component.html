@@ -16,14 +16,14 @@
             <th scope="row">{{i + 1}}</th>
             <td>{{product.name}}</td>
             <td>{{product.price}}</td>
-            <td>{{product.desc}}</td>
+            <td class="desc">{{product.desc}}</td>
             <td><img width="70px" src={{product.image}} alt=""></td>
             <td>{{product.categoryId}}</td>
             <td>
                 <a routerLink="/admin/product/update/{{product._id!}}">
                     <button class="btn btn-primary">Update</button>
                 </a>
-                <button class="mx-3 btn btn-danger" (click)="removeProduct(product._id!)">Delete</button>
+                <button class="mx-3 my-3 btn btn-danger" (click)="removeProduct(product._id!)">Delete</button>
             </td>
         </tr>
     </tbody>
