@@ -11,10 +11,10 @@ import { ProductService } from 'src/app/service/product.service';
   styleUrls: ['./buy-item.component.css']
 })
 export class BuyItemComponent {
-  product: IProduct[] = [];
-  constructor(private productService: ProductService) {
-    this.productService.getProducts().subscribe(data => {
-      this.product = data;
-    });
-  }
+  // product: IProduct[] = [];
+  // constructor(private productService: ProductService) {
+  //   this.productService.getProducts().subscribe(data => {
+  //     this.product = data;
+  //   });
+  // }
 }

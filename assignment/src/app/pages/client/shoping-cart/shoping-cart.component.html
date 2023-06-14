@@ -28,8 +28,10 @@
                 </td>
                 <td>{{ subtotal(cart)}}</td>
                 <td>
-                    <button type="button" class="btn btn-danger mr-3" (click)="removeItem(cart)">Xóa</button>
-                    <button type="button" class="btn btn-success">mua</button>
+                    <div> <button type="button" class="btn btn-danger" (click)="removeItem(cart)">Xóa</button>
+                    </div>
+                    <div><a class="nav-link" href="/oder"><button type="button" class="btn btn-success">mua</button></a>
+                    </div>
                 </td>
 
             </tr>
