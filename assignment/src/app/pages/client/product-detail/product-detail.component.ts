@@ -45,7 +45,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addToCart(products: IProduct) {
-    let index = this.carts.findIndex((item: any) => index.id === products._id)
+    let index = this.carts.findIndex((item: any) => item.id === products._id)
     if (index >= 0) {
       this.carts[index].quantity += 1;
     } else {
@@ -53,6 +53,7 @@ export class ProductDetailComponent implements OnInit {
         id: products._id,
         name: products.name,
         price: products.price,
+        image: products.image,
         quantity: 1,
         subtotal: function () {
           return this.price * this.quantity

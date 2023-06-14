@@ -15,6 +15,7 @@ export class ShopingCartComponent implements OnInit {
   constructor(private cartService: CartService) {
     this.carts = this.getCart();
   }
+  
   getCart(): any {
     // Lưu vào local storage
     let cartJson = sessionStorage.getItem('cart')
@@ -46,6 +47,17 @@ export class ShopingCartComponent implements OnInit {
     sessionStorage.removeItem('cart')
     this.carts = []
   }
+
+  increaseQuantity(index: number) {
+    this.carts[index].quantity += 1;
+  }
+
+  decreaseQuantity(index: number) {
+    if (this.carts[index].quantity > 1) {
+      this.carts[index].quantity -= 1;
+    }
+  }
+
 
   // getCartItems(): void {
   //   this.cartService.getCart().subscribe(

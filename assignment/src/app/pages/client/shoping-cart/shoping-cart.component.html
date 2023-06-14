@@ -1,6 +1,6 @@
 <h2>Cart</h2>
 
-<div *ngIf="carts.length >0">
+<div *ngIf="carts.length > 0">
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
@@ -16,17 +16,20 @@
         <tbody>
             <tr *ngFor="let cart of carts;let i = index">
                 <td>{{i+1}}</td>
-                <td><img [src]="cart.image" alt="ảnh" /></td>
+                <!-- <td><img [src]="cart.image" alt="ảnh" /></td> -->
+                <th><img [src]="cart.image" alt="Ảnh" width="70px"></th>
                 <td>{{cart.name}}</td>
                 <td>{{cart.price}}</td>
                 <td>
-                    {{cart.quantity}}
-                    <!-- <input (change)="updateQuantity(i,$event)" type="number" [value]="cart.quantity"
-              style="width:60px;text-align: center;" /> -->
+                    <!-- {{cart.quantity}} -->
+                    <button (click)="decreaseQuantity(i)">-</button>
+                    <input type="text" [(ngModel)]="cart.quantity" placeholder="Quantity" style="width: 25px;">
+                    <button (click)="increaseQuantity(i)">+</button>
                 </td>
                 <td>{{ subtotal(cart)}}</td>
                 <td>
-                    <button type="button" class="btn btn-danger" (click)="removeItem(cart)">Xóa</button>
+                    <button type="button" class="btn btn-danger mr-3" (click)="removeItem(cart)">Xóa</button>
+                    <button type="button" class="btn btn-success">mua</button>
                 </td>
 
             </tr>
@@ -38,9 +41,9 @@
     <p style="color:red;text-align: center;margin-top: 50px;margin-bottom: 50px;">Giỏ hàng trống</p>
 </div>
 <div class="text-center">
-    <a routerLink="/" class="btn btn-sm btn-primary"
+    <!-- <a routerLink="/" class="btn btn-sm btn-primary"
         style="margin-bottom: 50px;height:40px;font-size:20px;color:#fff">Tiếp tục mua
-        hàng</a>
+        hàng</a> -->
     <button style="margin-bottom: 50px;margin-left: 40px;" class="btn btn-sm btn-danger" (click)="clearCart()">Xóa tất
         cả</button>
 
