@@ -19,6 +19,7 @@ import { CategoryManagementComponent } from './pages/admin/category-management/c
 import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './pages/users/logout/logout.component';
 import { ListUserComponent } from './pages/users/list-user/list-user.component';
+import { ShopingCartComponent } from './pages/client/shoping-cart/shoping-cart.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: 'home', component: HomePageComponent },
       { path: 'product', component: ProductPageComponent },
       { path: 'product/:id', component: ProductDetailComponent },
+      { path: 'cart', component: ShopingCartComponent },
       { path: 'signup', component: SignupComponent },
       { path: 'signin', component: SigninComponent },
       { path: 'logout', component: LogoutComponent },
@@ -44,7 +46,7 @@ const routes: Routes = [
       { path: 'category-management', component: CategoryManagementComponent },
       { path: 'category/add', component: AddCategoryComponent },
       { path: 'category/update/:id', component: UpdateCategoryComponent },
-      {path: 'users', component: ListUserComponent}
+      { path: 'users', component: ListUserComponent }
     ]
   },
   {

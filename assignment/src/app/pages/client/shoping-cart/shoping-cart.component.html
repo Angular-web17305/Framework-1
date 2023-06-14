@@ -1,1 +1,76 @@
-<p>shoping-cart works!</p>
+<h2>Cart</h2>
+
+<div *ngIf="carts.length > 0">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Ảnh</th>
+                <th>Tên SP</th>
+                <th>Giá SP</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cart of carts;let i = index">
+                <td>{{i+1}}</td>
+                <!-- <td><img [src]="cart.image" alt="ảnh" /></td> -->
+                <th><img [src]="cart.image" alt="Ảnh" width="70px"></th>
+                <td>{{cart.name}}</td>
+                <td>{{cart.price}}</td>
+                <td>
+                    <!-- {{cart.quantity}} -->
+                    <button (click)="decreaseQuantity(i)">-</button>
+                    <input type="text" [(ngModel)]="cart.quantity" placeholder="Quantity" style="width: 25px;">
+                    <button (click)="increaseQuantity(i)">+</button>
+                </td>
+                <td>{{ subtotal(cart)}}</td>
+                <td>
+                    <button type="button" class="btn btn-danger mr-3" (click)="removeItem(cart)">Xóa</button>
+                    <button type="button" class="btn btn-success">mua</button>
+                </td>
+
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+<div *ngIf="carts.length ===0">
+    <p style="color:red;text-align: center;margin-top: 50px;margin-bottom: 50px;">Giỏ hàng trống</p>
+</div>
+<div class="text-center">
+    <!-- <a routerLink="/" class="btn btn-sm btn-primary"
+        style="margin-bottom: 50px;height:40px;font-size:20px;color:#fff">Tiếp tục mua
+        hàng</a> -->
+    <button style="margin-bottom: 50px;margin-left: 40px;" class="btn btn-sm btn-danger" (click)="clearCart()">Xóa tất
+        cả</button>
+
+</div>
+
+
+
+
+<!-- <div *ngIf="productInfo">
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of productInfo">
+                <td><img [src]="item.productInfo.image" alt="Product Image" /></td>
+                <td>{{ item.productInfo.name }}</td>
+                <td>{{ item.productInfo.price }}</td>
+                <td>{{ item.quantity }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Total: {{ total }}</p>
+</div> -->

@@ -1,0 +1,20 @@
+h2 {
+    margin-bottom: 50px;
+    text-align: center;
+    color: #1c1c1c;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+}
+
+h2:after {
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    right: 0;
+    height: 4px;
+    width: 180px;
+    background: #7fad39;
+    content: "";
+    margin: 0 auto;
+}
